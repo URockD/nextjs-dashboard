@@ -24,7 +24,8 @@ export async function fetchRevenue() {
     // console.log('Data fetch completed after 3 seconds.');
 
     return data;
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch revenue data.');
   }
@@ -44,7 +45,8 @@ export async function fetchLatestInvoices() {
       amount: formatCurrency(invoice.amount),
     }));
     return latestInvoices;
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch the latest invoices.');
   }
@@ -79,7 +81,8 @@ export async function fetchCardData() {
       totalPaidInvoices,
       totalPendingInvoices,
     };
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch card data.');
   }
@@ -115,7 +118,8 @@ export async function fetchFilteredInvoices(
     `;
 
     return invoices;
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch invoices.');
   }
@@ -136,7 +140,8 @@ export async function fetchInvoicesPages(query: string) {
 
     const totalPages = Math.ceil(Number(data[0].count) / ITEMS_PER_PAGE);
     return totalPages;
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch total number of invoices.');
   }
@@ -161,7 +166,8 @@ export async function fetchInvoiceById(id: string) {
     }));
 
     return invoice[0];
-  } catch (error) {
+  }
+  catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch invoice.');
   }
@@ -178,7 +184,8 @@ export async function fetchCustomers() {
     `;
 
     return customers;
-  } catch (err) {
+  }
+  catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all customers.');
   }
@@ -211,7 +218,8 @@ export async function fetchFilteredCustomers(query: string) {
     }));
 
     return customers;
-  } catch (err) {
+  }
+  catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch customer table.');
   }
