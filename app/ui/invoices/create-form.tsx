@@ -110,7 +110,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   type="radio"
                   value="paid"
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
-                  aria-describedby="status-error"                 
+                  aria-describedby="status-error"
                 />
                 <label
                   htmlFor="paid"
@@ -131,9 +131,9 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
           <div id="message-error" aria-live="polite" aria-atomic="true">
             {state.message && (
-               <p className="mt-2 text-sm text-red-500" key={state.message}>
-               {state.message}
-             </p>
+              <p className="mt-2 text-sm text-red-500" key={state.message}>
+                {state.message}
+              </p>
             )}
           </div>
         </fieldset>
